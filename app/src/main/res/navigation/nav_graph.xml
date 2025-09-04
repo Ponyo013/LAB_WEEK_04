@@ -22,4 +22,10 @@
         android:name="com.example.lab_week_04.DetailFragment"
         android:label="Detail"
         tools:layout="@layout/fragment_detail" />
+
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.lab_week_04.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" />
 </navigation>
