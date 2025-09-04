@@ -5,7 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.*
+import androidx.navigation.fragment.findNavController
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,6 +28,8 @@ class DetailFragment : Fragment() {
     private val coffeeDesc: TextView?
         get() = view?.findViewById(R.id.coffee_desc)
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -47,6 +50,11 @@ class DetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val coffeeId = arguments?.getInt(COFFEE_ID, 0) ?: 0
         setCoffeeData(coffeeId)
+
+        val backButton = view.findViewById<Button>(R.id.back_button)
+        backButton.setOnClickListener{
+            findNavController().navigateUp()
+        }
     }
 
     fun setCoffeeData(id: Int){
@@ -55,13 +63,25 @@ class DetailFragment : Fragment() {
                 coffeeTitle?.text = getString(R.string.affogato_title)
                 coffeeDesc?.text = getString(R.string.affogato_desc)
             }
+
             R.id.americano -> {
                 coffeeTitle?.text = getString(R.string.americano_title)
                 coffeeDesc?.text = getString(R.string.americano_desc)
             }
+
             R.id.latte -> {
                 coffeeTitle?.text = getString(R.string.latte_title)
                 coffeeDesc?.text = getString(R.string.latte_desc)
+            }
+
+            R.id.matcha -> {
+                coffeeTitle?.text = getString(R.string.matcha_title)
+                coffeeDesc?.text = getString(R.string.matcha_desc)
+            }
+
+            R.id.long_black -> {
+                coffeeTitle?.text = getString(R.string.long_title)
+                coffeeDesc?.text = getString(R.string.long_desc)
             }
         }
     }
