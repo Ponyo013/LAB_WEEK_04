@@ -41,6 +41,7 @@ class CafeFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_cafe, container, false)
     }
 
+    //    View Pager Logic and tab layout
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val viewPager = view.findViewById<ViewPager2>(R.id.view_pager)
