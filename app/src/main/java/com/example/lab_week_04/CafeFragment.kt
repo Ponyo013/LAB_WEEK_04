@@ -44,6 +44,8 @@ class CafeFragment : Fragment() {
     //    View Pager Logic and tab layout
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Change Tab for each content
         val viewPager = view.findViewById<ViewPager2>(R.id.view_pager)
         val tabLayout = view.findViewById<TabLayout>(R.id.tab_layout)
         val adapter = CafeAdapter(requireContext(),childFragmentManager, lifecycle)
